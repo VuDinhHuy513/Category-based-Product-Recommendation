@@ -24,11 +24,6 @@ Bài toán chính của project là **Category-based Product Recommendation**. H
 - Xóa sản phẩm
 - Quay lại trang sản phẩm dành cho người dùng
 
-### Phân tích / thống kê
-
-- Trang analytics hiển thị thông tin tổng quan về sản phẩm
-- Hỗ trợ trực quan hóa dữ liệu phục vụ đánh giá hệ thống
-
 ## 3. Machine Learning
 
 Project sử dụng hướng tiếp cận **Content-Based Recommendation**.
