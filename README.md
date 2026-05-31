@@ -1,4 +1,4 @@
-# Product Recommendation Web App - Đồ án 2
+# Category-based Product Recommendation
 
 ## 1. Giới thiệu
 
@@ -340,4 +340,4 @@ Hệ thống sau khi chạy thành công sẽ cho phép:
 
 Sinh viên thực hiện: Vũ Đình Huy  
 Môn học: Đồ án 2   
-Tên project: Product Recommendation Web App
+Tên project: Category-based Product Recommendation
