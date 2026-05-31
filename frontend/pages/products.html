@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neko Shop - Products</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/products.css" />
+</head>
+<body>
+  <header class="shop-header">
+    <div class="container topbar">
+      <div class="logo-wrap">
+        <div class="logo-circle">N</div>
+        <div class="logo-text">
+          <h1>Neko Shop</h1>
+          <p>Smart recommendations for better shopping</p>
+        </div>
+      </div>
+
+      <div id="authArea" class="auth-area"></div>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <section class="shop-toolbar">
+      <div class="toolbar-left">
+        <div class="field-group search-group">
+          <label for="searchInput">Search products</label>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by product name or description..."
+          />
+        </div>
+
+        <div class="field-group category-group">
+          <label for="categorySelect">Category</label>
+          <select id="categorySelect">
+            <option value="">All Categories</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="toolbar-right">
+        <button id="searchBtn" class="search-btn">Search</button>
+      </div>
+    </section>
+
+    <section class="results-bar">
+      <div>
+        <h2>All Products</h2>
+        <p>Explore products from your processed dataset</p>
+      </div>
+      <div id="resultCount" class="result-count">Loading products...</div>
+    </section>
+
+    <section id="loadingState" class="state-box">
+      Loading product data...
+    </section>
+
+    <section id="errorState" class="state-box error hidden">
+      Failed to load products.
+    </section>
+
+    <section id="productGrid" class="product-grid hidden">
+    </section>
+  </main>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/products.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neko Shop - Product Detail</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/detail.css" />
+</head>
+<body>
+  <header class="shop-header">
+    <div class="container topbar">
+      <div class="logo-wrap">
+        <div class="logo-circle">N</div>
+        <div class="logo-text">
+          <h1>Neko Shop</h1>
+          <p>Smart recommendations for better shopping</p>
+        </div>
+      </div>
+
+      <a class="back-link" href="./products.html">Back to Products</a>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <section id="loadingState" class="state-box">
+      Loading product detail...
+    </section>
+
+    <section id="errorState" class="state-box error hidden">
+      Failed to load product detail.
+    </section>
+
+    <section id="productDetail" class="product-detail hidden"></section>
+
+    <section id="withCategorySection" class="recommend-section section-primary hidden">
+      <div class="section-heading">
+        <div>
+          <span class="section-badge primary-badge">Main B12 Mode</span>
+          <h2>Recommended With Category</h2>
+          <p>Uses title, description, and category information.</p>
+        </div>
+      </div>
+
+      <div id="withCategoryLoading" class="state-box">
+        Loading recommendations with category...
+      </div>
+
+      <div id="withCategoryGrid" class="recommend-grid hidden"></div>
+    </section>
+
+    <section id="compareControls" class="compare-control hidden">
+      <button id="showWithoutCategoryBtn">
+        Show Recommendations Without Category
+      </button>
+
+      <button id="showHybridBtn" class="secondary-control-btn">
+        Show Hybrid Recommendations
+      </button>
+    </section>
+
+    <section id="withoutCategorySection" class="recommend-section section-secondary hidden">
+      <div class="section-heading">
+        <div>
+          <span class="section-badge secondary-badge">Category Ablation</span>
+          <h2>Recommended Without Category</h2>
+          <p>Uses only title and description for similarity.</p>
+        </div>
+      </div>
+
+      <div id="withoutCategoryLoading" class="state-box hidden">
+        Loading recommendations without category...
+      </div>
+
+      <div id="withoutCategoryGrid" class="recommend-grid hidden"></div>
+    </section>
+
+    <section id="hybridSection" class="recommend-section section-hybrid hidden">
+      <div class="section-heading">
+        <div>
+          <span class="section-badge hybrid-badge">Enhanced Ranking</span>
+          <h2>Hybrid Recommendations</h2>
+          <p>Uses content, category, rating, and popularity for ranking.</p>
+        </div>
+      </div>
+
+      <div id="hybridLoading" class="state-box hidden">
+        Loading hybrid recommendations...
+      </div>
+
+      <div id="hybridGrid" class="recommend-grid hidden"></div>
+    </section>
+  </main>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/product-detail.js"></script>
+</body>
+</html>

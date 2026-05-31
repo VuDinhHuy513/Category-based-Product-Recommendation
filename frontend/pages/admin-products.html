@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Neko Shop - Admin Products</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/products.css" />
+</head>
+<body>
+  <header class="shop-header">
+  <div class="container topbar">
+    <div class="logo-wrap">
+      <div class="logo-circle">N</div>
+      <div class="logo-text">
+        <h1>Neko Shop</h1>
+        <p>Smart recommendations for better shopping</p>
+      </div>
+    </div>
+
+    <div class="auth-area">
+      <a href="./products.html" class="auth-back-link">
+        Back to Products
+      </a>
+    </div>
+  </div>
+</header>
+
+  <main class="container page-content">
+    <section class="shop-toolbar">
+      <div class="toolbar-left">
+        <div class="field-group search-group">
+          <label>Search products</label>
+          <input id="searchInput" type="text" placeholder="Search product..." />
+        </div>
+      </div>
+
+      <div class="toolbar-right">
+        <button id="searchBtn" class="search-btn">Search</button>
+      </div>
+    </section>
+
+    <section id="adminMessage" class="state-box hidden"></section>
+
+    <section id="productGrid" class="product-grid"></section>
+
+    <section id="editPanel" class="admin-edit-panel hidden">
+  <div class="edit-panel-header">
+    <div>
+      <span class="edit-badge">Product Manager</span>
+      <h2>Edit Product</h2>
+      <p>Update product information and save directly to MySQL.</p>
+    </div>
+
+    <button id="cancelEditTopBtn" type="button" class="edit-close-btn">
+      ×
+    </button>
+  </div>
+
+  <input type="hidden" id="editProductId" />
+
+  <div class="edit-layout">
+    <aside class="edit-preview-card">
+      <div class="edit-preview-image-wrap">
+        <img
+          id="editImagePreview"
+          class="edit-preview-image"
+          src=""
+          alt="Product preview"
+          onerror="this.src='https://via.placeholder.com/420x320?text=Neko+Shop'"
+        />
+      </div>
+
+      <div class="edit-preview-info">
+        <span class="edit-preview-label">Product ID</span>
+        <strong id="editPreviewProductId">N/A</strong>
+      </div>
+
+      <p class="edit-preview-note">
+        Image preview updates when you change the image link.
+      </p>
+    </aside>
+
+    <div class="edit-form-grid">
+      <div class="edit-field edit-field-full">
+        <label for="editProductName">Product Name</label>
+        <input id="editProductName" type="text" placeholder="Enter product name" />
+      </div>
+
+      <div class="edit-field edit-field-full">
+        <label for="editImgLink">Image Link</label>
+        <input id="editImgLink" type="text" placeholder="Enter image URL" />
+      </div>
+
+      <div class="edit-field edit-field-full">
+        <label for="editProductLink">Product Link</label>
+        <input id="editProductLink" type="text" placeholder="Enter source URL" />
+      </div>
+
+      <div class="edit-field edit-field-full">
+        <label for="editAboutProduct">About Product</label>
+        <textarea
+          id="editAboutProduct"
+          rows="5"
+          placeholder="Enter product description"
+        ></textarea>
+      </div>
+
+      <div class="edit-field">
+        <label for="editRating">Rating</label>
+        <input id="editRating" type="number" step="0.1" placeholder="4.5" />
+      </div>
+
+      <div class="edit-field">
+        <label for="editRatingCount">Rating Count</label>
+        <input id="editRatingCount" type="number" placeholder="1000" />
+      </div>
+    </div>
+  </div>
+
+  <div class="edit-actions">
+    <button id="cancelEditBtn" type="button" class="edit-secondary-btn">
+      Cancel
+    </button>
+
+    <button id="saveProductBtn" type="button" class="edit-primary-btn">
+      Save Product
+    </button>
+  </div>
+</section>
+  </main>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/admin-products.js"></script>
+</body>
+</html>

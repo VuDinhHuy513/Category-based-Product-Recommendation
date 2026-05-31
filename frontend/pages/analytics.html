@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neko Shop - Analytics</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/analytics.css" />
+</head>
+<body>
+  <header class="shop-header">
+    <div class="container topbar">
+      <div class="logo-wrap">
+        <div class="logo-circle">N</div>
+        <div class="logo-text">
+          <h1>Neko Shop</h1>
+          <p>Analytics dashboard for category-based recommendation</p>
+        </div>
+      </div>
+
+      <a class="back-link" href="./products.html">Back to Products</a>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <section class="page-head">
+      <div>
+        <h2>Analytics Dashboard</h2>
+        <p>Overview of products, categories, ratings, and recommendation modes.</p>
+      </div>
+    </section>
+
+    <section id="loadingState" class="state-box">
+      Loading analytics data...
+    </section>
+
+    <section id="errorState" class="state-box error hidden">
+      Failed to load analytics data.
+    </section>
+
+    <section id="analyticsContent" class="hidden">
+      <section class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-label">Total Products</span>
+          <h3 id="totalProducts">0</h3>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Level 1 Categories</span>
+          <h3 id="totalCat1">0</h3>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Level 3/4 Categories</span>
+          <h3 id="totalDeepCategories">0</h3>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Average Rating</span>
+          <h3 id="avgRating">0.00</h3>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="panel-card">
+          <div class="panel-head">
+            <h3>Recommendation Modes</h3>
+            <p>Main logic currently used in the system</p>
+          </div>
+
+          <div class="mode-list">
+            <div class="mode-item">
+              <span class="mode-badge content-badge">Content Only</span>
+              <p>Uses only title and description for similarity.</p>
+            </div>
+
+            <div class="mode-item">
+              <span class="mode-badge category-badge">Content + Category</span>
+              <p>Uses title, description, and category information.</p>
+            </div>
+
+            <div class="mode-item">
+              <span class="mode-badge hybrid-badge">Hybrid</span>
+              <p>Uses content, category, rating, and popularity for ranking.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-head">
+            <h3>Rating Distribution</h3>
+            <p>Count of products by rounded rating</p>
+          </div>
+
+          <div id="ratingBars" class="bars-wrap"></div>
+        </div>
+      </section>
+
+      <section class="panel-card large-panel">
+        <div class="panel-head">
+          <h3>Top Categories by Product Count</h3>
+          <p>Based on displayed category level priority: cat_level_4 → cat_level_3</p>
+        </div>
+
+        <div id="categoryBars" class="bars-wrap"></div>
+      </section>
+
+      <section class="panel-card large-panel">
+        <div class="panel-head">
+          <h3>Category Summary Table</h3>
+          <p>Top categories and number of products in each group</p>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Category</th>
+                <th>Product Count</th>
+              </tr>
+            </thead>
+            <tbody id="categoryTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/analytics.js"></script>
+</body>
+</html>

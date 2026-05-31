@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Neko Shop - Login</title>
+
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+</head>
+
+<body>
+  <header class="login-header">
+    <div class="container login-topbar">
+      <a href="./products.html" class="brand-link">
+        <div class="logo-circle">N</div>
+
+        <div class="brand-text">
+          <h1>Neko Shop</h1>
+          <p>Smart recommendations for better shopping</p>
+        </div>
+      </a>
+    </div>
+  </header>
+
+  <main class="login-page">
+    <section class="login-card">
+      <div class="login-card-header">
+        <div class="mini-logo">N</div>
+
+        <div>
+          <h2>Login</h2>
+          <p>Access your Neko Shop account</p>
+        </div>
+      </div>
+
+      <div class="login-form">
+        <div class="login-field">
+          <label for="usernameInput">Username</label>
+          <input
+            id="usernameInput"
+            type="text"
+            placeholder="Enter your username"
+            autocomplete="username"
+          />
+        </div>
+
+        <div class="login-field">
+          <label for="passwordInput">Password</label>
+          <input
+            id="passwordInput"
+            type="password"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+          />
+        </div>
+
+        <button id="loginBtn" type="button" class="login-btn">
+          Login
+        </button>
+
+        <p id="loginError" class="hidden login-error">
+          Login failed. Xem F12 Console để biết lỗi.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="../js/api.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>
